@@ -30,10 +30,10 @@ router.delete("/posts/:id", deletePost); // ok
 
 
 // Comment routes
-router.post("/comments", addComment); // todo
-router.get("/comments/:post_id", getCommentsFromPost); // todo
-router.get("/comments/unique/:id", getCommentById); // todo
-router.delete("/comments/:id", deleteComment); // todo
+router.post("/comments", addComment); // ok
+router.get("/comments/:post_id", getCommentsFromPost); // ok
+router.get("/comments/unique/:id", getCommentById); // ok
+router.delete("/comments/:id", deleteComment); // ok
 
 // Follow routes
 router.post("/follows", addFollow); // ok
