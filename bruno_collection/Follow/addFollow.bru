@@ -1,0 +1,21 @@
+meta {
+  name: addFollow
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/api/follows
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE3Mjg1NjY5ODcsImV4cCI6MTcyODY1MzM4N30.15HUoLQf0lozZUFvWUlEmpdO250xNcpIIj37nFRedn4
+}
+
+body:json {
+  {
+    "followed_user_id": 1
+  }
+}

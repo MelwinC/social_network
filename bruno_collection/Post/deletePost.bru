@@ -1,0 +1,15 @@
+meta {
+  name: deletePost
+  type: http
+  seq: 4
+}
+
+delete {
+  url: http://localhost:3000/api/posts/3
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE3Mjg1Njg2MDcsImV4cCI6MTcyODY1NTAwN30.xQL-TvfUSyloeYpRQMl_uY4cAfIcaE8uE6-nqusJyvs
+}

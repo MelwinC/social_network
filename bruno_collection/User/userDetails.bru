@@ -1,0 +1,23 @@
+meta {
+  name: userDetails
+  type: http
+  seq: 5
+}
+
+put {
+  url: http://localhost:3000/api/users
+  body: json
+  auth: none
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE3Mjg1NjE5MTcsImV4cCI6MTcyODY0ODMxN30.Kd0d0Os1jsKEjvQcuJuV-wycBExOe0xehCt2SxBD-NI
+}
+
+body:json {
+  {
+    "firstname": "test_firstname",
+    "lastname": "test_lastname",
+    "photo": "test_photo"
+  }
+}
