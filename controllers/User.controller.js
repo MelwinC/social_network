@@ -50,7 +50,7 @@ export const usersDetails = async (req, res) => {
 export const getUsers = async (_, res) => {
   try {
     const users = await User.findAll({
-      attributes: ["id", "photo", "mail", "firstname", "lastname"],
+      attributes: ["id", "photo", "firstname", "lastname"],
     });
     res.status(200).json(users);
   } catch (error) {
@@ -67,7 +67,7 @@ export const getUsers = async (_, res) => {
 export const getUserById = async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id, {
-      attributes: ["id", "photo", "mail", "firstname", "lastname"],
+      attributes: ["id", "photo", "firstname", "lastname"],
     });
 
     if(!user){

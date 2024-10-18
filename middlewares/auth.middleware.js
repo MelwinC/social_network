@@ -1,10 +1,7 @@
-import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import AppError from '../errors/app.error.js';
 import ERROR_MESSAGES from '../errors/const.error.js';
 import User from '../models/User.model.js';
-
-dotenv.config();
 
 const checkToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];

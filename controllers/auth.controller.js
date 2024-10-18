@@ -1,11 +1,8 @@
 import bcrypt from "bcrypt";
-import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 import AppError from "../errors/app.error.js";
 import ERROR_MESSAGES from "../errors/const.error.js";
 import User from "../models/User.model.js";
-
-dotenv.config();
 
 // Register a new user
 export const register = async (req, res) => {
