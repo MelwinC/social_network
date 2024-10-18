@@ -5,11 +5,11 @@ meta {
 }
 
 get {
-  url: http://localhost:3000/api/comments/4
+  url: http://localhost:3000/api/comments/1
   body: none
-  auth: none
+  auth: bearer
 }
 
-headers {
-  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibWFpbCI6InRlc3QyQHRlc3QuY29tIiwiaWF0IjoxNzI4NTY4NjI2LCJleHAiOjE3Mjg2NTUwMjZ9.FfkhYW_SW2mqNeNAtndbpHZokzIs1v8zBDaXaOgRcR8
+auth:bearer {
+  token: {{token}}
 }
