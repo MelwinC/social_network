@@ -5,7 +5,8 @@ import User from "../models/User.model.js";
 // Add user details
 export const usersDetails = async (req, res) => {
   try {
-    const { firstname, lastname, photo } = req.body;
+    const { firstname, lastname } = req.body;
+    const photo = req.file;
 
     if (!firstname || !lastname || !photo) {
       throw new AppError(400, "Missing required fields");
@@ -20,7 +21,7 @@ export const usersDetails = async (req, res) => {
 
     user.firstname = firstname;
     user.lastname = lastname;
-    user.photo = photo;
+    user.photo = photo.path;
 
     // Update the user details
     await user.save();
