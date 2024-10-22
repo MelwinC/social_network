@@ -282,7 +282,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           }
         ],
@@ -468,7 +468,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           }
         ],
@@ -531,7 +531,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           }
         ],
@@ -644,7 +644,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           }
         ],
@@ -692,7 +692,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           }
         ],
@@ -747,7 +747,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           }
         ],
@@ -934,7 +934,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
@@ -942,7 +942,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           }
         ],
@@ -997,7 +997,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           }
         ],
@@ -1103,7 +1103,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "integer"
           },
           "firstname": {
             "type": "string"
@@ -1149,7 +1149,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "integer"
           },
           "title": {
             "type": "string"
@@ -1158,7 +1158,7 @@
             "type": "string"
           },
           "user_id": {
-            "type": "string"
+            "type": "integer"
           }
         }
       },
@@ -1176,7 +1176,7 @@
             "type": "string"
           },
           "post_id": {
-            "type": "string"
+            "type": "integer"
           }
         }
       },
@@ -1184,7 +1184,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "integer"
           },
           "title": {
             "type": "string"
@@ -1193,10 +1193,10 @@
             "type": "string"
           },
           "user_id": {
-            "type": "string"
+            "type": "integer"
           },
           "post_id": {
-            "type": "string"
+            "type": "integer"
           }
         }
       },
@@ -1207,7 +1207,7 @@
         ],
         "properties": {
           "followed_user_id": {
-            "type": "string"
+            "type": "integer"
           }
         }
       },
@@ -1215,10 +1215,10 @@
         "type": "object",
         "properties": {
           "follower_user_id": {
-            "type": "string"
+            "type": "integer"
           },
           "followed_user_id": {
-            "type": "string"
+            "type": "integer"
           }
         }
       },

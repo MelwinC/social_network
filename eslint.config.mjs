@@ -7,6 +7,11 @@ export default [
       ecmaVersion: "latest",
       sourceType: "module",
     },
+    env: {
+      browser: true,
+      node: true,
+      es2021: true,
+    },
     rules: {
       "sort-imports": [
         "error",

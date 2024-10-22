@@ -7,9 +7,14 @@ import { deleteUser, getUserById, getUsers, usersDetails } from "./User.controll
 import { login, register } from "./auth.controller.js";
 import swaggerUi from 'swagger-ui-express';
 import swaggerDoc from '../docs/swagger.json' with { type: "json"};
-
 import multer from "multer";
-const upload = multer({ dest: 'uploads/' })
+
+const upload = multer({
+  dest: 'uploads/',
+  limits: {
+    fileSize: 2 * 1024 * 1024, // Limite de taille de fichier à 2MB
+  }
+});
 
 const router = express.Router();
 

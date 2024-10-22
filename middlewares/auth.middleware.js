@@ -5,7 +5,7 @@ import User from '../models/User.model.js';
 
 const checkToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
+  const token = authHeader?.split(' ')[1];
 
   if (!token) {
     const response = {
