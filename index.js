@@ -2,7 +2,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import router from "./controllers/index.js";
-// import sequelize from "./utils/sequelize.js";
+import sequelize from "./utils/sequelize.js";
 
 dotenv.config();
 
@@ -15,7 +15,7 @@ app.use(express.static("uploads"));
 app.use(express.json());
 app.use("/api", router);
 
-// await sequelize.sync({force: true});
+await sequelize.sync({force: true});
 
 app.get("/", (_, res) => {
   res.send("Hello World!");

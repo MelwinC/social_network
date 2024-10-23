@@ -32,7 +32,6 @@ const checkToken = (req, res, next) => {
       }
       
       req.user = user;
-      console.log("user", user.id);
     } catch (error) {
       console.error("[AuthMiddleware.checkToken]", error);
       if(error instanceof AppError) {

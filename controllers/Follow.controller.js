@@ -44,8 +44,6 @@ export const getFollows = async (req, res) => {
   try {
     const { id } = req.user;
 
-    console.log("id", id);
-
     const follows = await Follow.findAll({
       where: { follower_user_id: id },
     });
@@ -66,13 +64,9 @@ export const getFollowers = async (req, res) => {
   try {
     const { id } = req.user;
 
-    console.log("id", id);
-
     const followers = await Follow.findAll({
       where: { followed_user_id: id },
     });
-
-    console.log("followers", followers);
 
     res.status(200).json(followers);
   } catch (error) {

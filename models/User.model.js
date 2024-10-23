@@ -1,7 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 import sequelize from "../utils/sequelize.js";
 
-class User extends Model {/*...*/}
+class User extends Model {}
 
 User.init(
   {
@@ -34,5 +34,24 @@ User.init(
     modelName: "User",
   }
 );
+
+User.associate = (models) => {
+  User.hasMany(models.Post, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+  });
+  User.hasMany(models.Comment, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+  });
+  User.hasMany(models.Follow, {
+    foreignKey: 'follower_user_id',
+    onDelete: 'CASCADE',
+  });
+  User.hasMany(models.Follow, {
+    foreignKey: 'followed_user_id',
+    onDelete: 'CASCADE',
+  });
+};
 
 export default User;

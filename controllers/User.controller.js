@@ -1,5 +1,6 @@
 import AppError from "../errors/app.error.js";
 import ERROR_MESSAGES from "../errors/const.error.js";
+import Post from "../models/Post.model.js";
 import User from "../models/User.model.js";
 
 // Add user details
@@ -89,9 +90,8 @@ export const getUserById = async (req, res) => {
 // Delete a user
 export const deleteUser = async (req, res) => {
   try {
-    const { id } = req.user;
-    const user = await User.findByPk(id);
-    
+    const { user } = req;
+
     if(!user){
       throw new AppError(404, "User not found");
     }

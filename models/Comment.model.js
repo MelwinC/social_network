@@ -4,6 +4,7 @@ import Post from "./Post.model.js";
 import User from "./User.model.js";
 
 class Comment extends Model {}
+
 Comment.init(
   {
     title: {
@@ -19,7 +20,8 @@ Comment.init(
       references: {
         model: User,
         key: 'id'
-      }
+      },
+      onDelete: 'CASCADE'
     },
     post_id: {
       type: DataTypes.INTEGER,
@@ -27,7 +29,8 @@ Comment.init(
       references: {
         model: Post,
         key: 'id'
-      }
+      },
+      onDelete: 'CASCADE'
     }
   },
   {
@@ -35,5 +38,16 @@ Comment.init(
     modelName: "Comment",
   }
 );
+
+Comment.associate = (models) => {
+  Comment.belongsTo(models.User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+  });
+  Comment.belongsTo(models.Post, {
+    foreignKey: 'post_id',
+    onDelete: 'CASCADE',
+  });
+};
 
 export default Comment;

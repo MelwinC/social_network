@@ -3,6 +3,7 @@ import sequelize from "../utils/sequelize.js";
 import User from "./User.model.js";
 
 class Post extends Model {}
+
 Post.init(
   {
     title: {
@@ -19,7 +20,8 @@ Post.init(
       references: {
         model: User,
         key: 'id'
-      }
+      },
+      onDelete: 'CASCADE'
     }
   },
   {
@@ -27,5 +29,16 @@ Post.init(
     modelName: "Post",
   }
 );
+
+Post.associate = (models) => {
+  Post.belongsTo(models.User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+  });
+  Post.hasMany(models.Comment, {
+    foreignKey: 'post_id',
+    onDelete: 'CASCADE',
+  });
+};
 
 export default Post;
