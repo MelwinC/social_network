@@ -129,7 +129,7 @@ export const getConversationById = async (req, res) => {
           include: [
             {
               model: User,
-              as: "users",
+              as: "user",
               attributes: ["id", "firstname", "lastname", "photo"],
             },
           ],

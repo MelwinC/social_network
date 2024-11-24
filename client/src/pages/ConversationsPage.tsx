@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { getMyConversations, leaveConversation } from "@/services/conversation";
+import { createConversation, getMyConversations, leaveConversation } from "@/services/conversation";
 import { Conversation } from "@/types/conversation";
 import ConversationComponent from "@/components/ConversationComponent";
 import Sidebar from "@/components/Sidebar";
@@ -7,6 +7,7 @@ import useAuth from "@/hooks/use-auth";
 import { getUserIdFromToken } from "@/services/auth";
 import socket from "@/services/socket";
 import CreateConversationModal from "@/components/CreateConversationModal";
+import { Message } from "@/types/message";
 
 const ConversationsPage = () => {
   useAuth();
@@ -117,9 +118,8 @@ const ConversationsPage = () => {
 
   const handleCreate = async (name: string, userIds: number[]) => {
     console.log(name, userIds);
-    // Logique pour créer une nouvelle conversation
-    // Vous pouvez appeler une API pour créer la conversation ici
-    // Puis mettre à jour l'état des conversations
+    await createConversation(userIds, name);
+    await fetchConversations();
   };
 
   return (
