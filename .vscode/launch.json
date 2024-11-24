@@ -9,7 +9,7 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/server/bin/www",
-      "restart": true,
+      "restart": false,
       "runtimeExecutable": "pnpm",
       "runtimeArgs": [
         "run",
