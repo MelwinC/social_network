@@ -1,0 +1,15 @@
+meta {
+  name: getComments
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{api_url}}/comments/2
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

@@ -1,0 +1,21 @@
+meta {
+  name: userDetails2
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{api_url}}/users
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token2}}
+}
+
+body:multipart-form {
+  firstname: firstname_user2
+  lastname: lastname_user2
+  photo: @file(C:\Users\melwi\Pictures\gaming\Pikachu.jpg)
+}

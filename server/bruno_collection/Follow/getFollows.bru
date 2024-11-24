@@ -1,0 +1,15 @@
+meta {
+  name: getFollows
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{api_url}}/follows
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

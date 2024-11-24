@@ -1,0 +1,22 @@
+meta {
+  name: addPost2
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{api_url}}/posts
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token2}}
+}
+
+body:json {
+  {
+    "title": "postTitleUser2",
+    "content": "postContentUser2"
+  }
+}

@@ -1,0 +1,15 @@
+meta {
+  name: getFriendsPosts2
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{api_url}}/posts/timeline
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token2}}
+}

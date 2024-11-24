@@ -1,0 +1,22 @@
+meta {
+  name: createMessage
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}/messages
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "content": "messageContentConv1User1",
+    "conversationId": 1
+  }
+}

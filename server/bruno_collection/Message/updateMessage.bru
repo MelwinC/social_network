@@ -1,0 +1,21 @@
+meta {
+  name: updateMessage
+  type: http
+  seq: 2
+}
+
+put {
+  url: {{api_url}}/messages/2
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token2}}
+}
+
+body:json {
+  {
+    "content": "messageContentConv2User1"
+  }
+}

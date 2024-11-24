@@ -1,0 +1,15 @@
+meta {
+  name: getMyPosts
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{api_url}}/posts/personal
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}

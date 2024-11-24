@@ -1,0 +1,23 @@
+meta {
+  name: addComment
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{api_url}}/comments
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "title": "commentTitleUser1",
+    "content": "commentContentUser1",
+    "post_id": 2
+  }
+}

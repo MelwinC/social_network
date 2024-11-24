@@ -1,0 +1,21 @@
+meta {
+  name: addFollow
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{api_url}}/follows
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "followed_user_id": 2
+  }
+}

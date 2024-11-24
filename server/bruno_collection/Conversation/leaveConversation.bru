@@ -1,0 +1,15 @@
+meta {
+  name: leaveConversation
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{api_url}}/conversations/9
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token2}}
+}
