@@ -1,5 +1,6 @@
 import express from "express";
 import multer from "multer";
+import path from "path";
 import swaggerUi from 'swagger-ui-express';
 import swaggerDoc from '../docs/swagger.json' with { type: "json" };
 import checkToken from "../middlewares/auth.middleware.js";
@@ -11,14 +12,26 @@ import { addUsersToConversation, createConversation, getConversationById, getMyC
 import { createMessage, deleteMessage, updateMessage } from "./Message.controller.js";
 import { login, register } from "./auth.controller.js";
 
-const upload = multer({
-  dest: 'uploads/',
-  limits: {
-    fileSize: 2 * 1024 * 1024, // Limite de taille de fichier à 2MB
+const router = express.Router();
+
+// Multer config
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname);
+    const filename = `${file.fieldname}-${Date.now()}${ext}`;
+    cb(null, filename);
   }
 });
 
-const router = express.Router();
+const upload = multer({
+  storage,
+  limits: {
+    fileSize: 2 * 1024 * 1024,
+  }
+});
 
 // Swagger route
 router.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDoc));
@@ -53,7 +66,7 @@ router.delete("/comments/:id", deleteComment);
 router.post("/follows", addFollow); 
 router.get("/follows", getFollows); 
 router.get("/follows/followers", getFollowers); 
-router.get("/follows/:follower_user_id/:followed_user_id", getFollowById); // ??
+router.get("/follows/:follower_user_id/:followed_user_id", getFollowById);
 router.delete("/follows/:followed_user_id", deleteFollow); 
 
 // Conversation routes

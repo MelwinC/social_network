@@ -143,6 +143,13 @@ const ConversationComponent: React.FC<ConversationProps> = ({
     handleSendMessage();
   };
 
+  const serverUrl = import.meta.env.VITE_API_URL;
+
+  const getSenderPhoto = (sender: UserType | undefined) => {
+    if (!sender) return "";
+    return sender.photo ? `${serverUrl}/${sender.photo}` : "";
+  }
+
   return (
     <>
       <div className="flex flex-col justify-between h-full">
@@ -153,7 +160,7 @@ const ConversationComponent: React.FC<ConversationProps> = ({
           ) : (
             otherUsers[0] && otherUsers[0].photo ? (
               <Avatar>
-                <AvatarImage src={otherUsers[0].photo} />
+                <AvatarImage src={getSenderPhoto(otherUsers[0])} />
                 <AvatarFallback className="bg-primary-dark">{capitalize((otherUsers[0].firstname?.substring(0, 1) || "")) + capitalize((otherUsers[0].lastname?.substring(0, 1) || ""))}</AvatarFallback>
               </Avatar>
             ) : (
